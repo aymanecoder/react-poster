@@ -16,7 +16,15 @@ const NewPost = (props) => {
         setEntredAuthor(event.target.value)
     }
     function SubmitHandler(event){
-      
+      event.preventDefault();
+      const postData ={
+          body: entredBody,
+          author:entredAuthor
+      };
+      // console.log(postData);
+      props.onAddPost(postData);
+      onCancel();
+
     }
 
     return ( 
